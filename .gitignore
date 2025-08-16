@@ -28,7 +28,6 @@ logs
 .env.*.local
 
 # Build output
-/dist
 /build
 /.next
 /out
