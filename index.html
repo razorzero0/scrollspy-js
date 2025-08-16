@@ -3,99 +3,141 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ScrollSpy Custom JS</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <title>scrollspyy-js | Demo</title>
     <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Page Header */
+      header {
+        text-align: center;
+        padding: 2rem 1rem;
+        background: #222;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1100;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      header .links {
+        margin-top: 0.5rem;
+      }
+
+      header .links a {
+        margin: 0 0.5rem;
+        text-decoration: none;
+        font-size: 1rem;
+        color: #61dafb;
+        transition: color 0.3s;
+      }
+
+      header .links a:hover {
+        color: #f39c12;
+      }
+
+      /* Sidebar Nav */
+      nav {
+        position: fixed;
+        top: 140px;
+        right: 20px;
+        z-index: 1000;
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      nav a {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: #333;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background: #f1f1f1;
+      }
+
+      /* Content sections */
       section {
-        height: 100vh;
-        padding: 50px;
+        min-height: 100vh;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
       }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#">ScrollSpy</a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    <!-- Header Title -->
+    <header>
+      <h1>📌 Scrollspyy-js</h1>
+      <div class="links">
+        <a href="https://github.com/razorzero0/parallaxx-js" target="_blank"
+          >🐙 GitHub</a
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Menu aligned to the right -->
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#hero">Hero</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#menu">Menu</a>
-            </li>
-          </ul>
-        </div>
+        <a href="https://www.npmjs.com/package/scrollspyy-js" target="_blank"
+          >📦 NPM</a
+        >
       </div>
+    </header>
+
+    <!-- Sidebar Nav -->
+    <nav>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
     <!-- Sections -->
-    <section id="home" class="bg-primary text-white section mt-5">
+    <section id="home" style="background: #e3f2fd">
       <h1>Home Section</h1>
     </section>
 
-    <section id="hero" class="bg-success text-white section">
-      <h1>Hero Section</h1>
-    </section>
-
-    <section id="about" class="bg-warning text-dark section">
+    <section id="about" style="background: #f3e5f5">
       <h1>About Section</h1>
     </section>
 
-    <section id="menu" class="bg-danger text-white section">
-      <h1>Menu Section</h1>
+    <section id="services" style="background: #e8f5e9">
+      <h1>Services Section</h1>
     </section>
 
-    <!-- Bootstrap Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom ScrollSpy JS -->
-    <script src="dist/scrollspy.js"></script>
+    <section id="contact" style="background: #fff3e0">
+      <h1>Contact Section</h1>
+    </section>
+
+    <!-- Include ScrollSpy -->
+    <script src="https://cdn.jsdelivr.net/npm/scrollspyy-js@latest/dist/scrollspy.js"></script>
     <script>
-      // Initialize ScrollSpy
-      scrollSpy.init({});
+      // Initialize Basic ScrollSpy
+      //   scrollSpy.init({});
 
-      // Initialize custom ScrollSpy
-
-      //   scrollSpy.init({
-      //     sectionSelector: "section", // target section selector
-      //     navSelector: ".nav-link", // target navigation link
-      //     padding: 5, // padding in px
-      //     borderRadius: "5px", // border radius
-      //     offset: 150, // trigger offset
-      //     bgColor: "#c4f622ff", // active background color
-      //     textColor: "#3E0703", // active text color
-      //     fontWeight: "bolder", // active font weight
-      //     underline: true, // enable underline
-      //     underlineColor: "red", // underline color
-      //     underlineOffset: "5px", // underline offset
-      //   });
+      // Initialize Advance ScrollSpy
+      scrollSpy.init({
+        sectionSelector: "section", // target sections
+        navSelector: ".nav-link", // navigation links
+        padding: 5, // padding in px
+        borderRadius: "5px", // border radius
+        offset: 150, // trigger offset
+        bgColor: "#c4f622ff", // active background color
+        textColor: "#3E0703", // active text color
+        fontWeight: "bolder", // active font weight
+        underline: true, // enable underline
+        underlineColor: "red", // underline color
+        underlineOffset: "5px", // underline offset
+      });
     </script>
   </body>
 </html>
